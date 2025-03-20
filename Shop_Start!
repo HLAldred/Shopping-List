@@ -1,0 +1,6 @@
+again = 'y'
+while again == 'y':
+    print("Welcome to your shopping list!")
+    print("Would you like to add, remove, browse, or quit?")
+    edit = input("> ").lower()
+    if edit == 'add':
