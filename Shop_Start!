@@ -1,3 +1,17 @@
+#-------------
+#FP1-F02-Shopping List
+#Hailey-lynn Aldred
+#20 March 2025
+#-------------
+#(I finally remember how to label the start)
+#-------------
+
+#----Dictionaries----#
+shop_list = {}
+
+#----Functions----#
+
+#----Main Code----#
 again = 'y'
 while again == 'y':
     print("Welcome to your shopping list!")
