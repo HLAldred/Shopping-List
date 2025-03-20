@@ -10,6 +10,16 @@
 shop_list = {}
 
 #----Functions----#
+def add_item():
+    leave = False
+    while leave == False:
+        key = input("What would you like to add? Type 'exit' to leave. > ").lower()
+        if key == 'exit':
+            leave = True
+        elif key != 'exit':
+            value = input("What is the price? > ")
+            print("Adding", key, "at the price of", value, "dollars.")
+            shop_list[key] = value
 
 #----Main Code----#
 again = 'y'
@@ -18,12 +28,4 @@ while again == 'y':
     print("Would you like to add, remove, browse, or quit?")
     edit = input("> ").lower()
     if edit == 'add':
-        leave = False
-        while leave == False:
-            key = input("What would you like to add? Type 'exit' to leave. > ").lower()
-            if key == 'exit':
-                leave = True
-            elif key != 'exit':
-                value = input("What is the price? > ")
-                print("Adding", key, "at the price of", value, "dollars.")
-                shop_list[key] = value
+        add_item()
