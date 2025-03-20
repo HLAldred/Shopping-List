@@ -29,3 +29,16 @@ while again == 'y':
     edit = input("> ").lower()
     if edit == 'add':
         add_item()
+    elif edit == 'remove':
+        leave = False
+        while leave == False:
+            key = input("What would you like to remove? Type 'exit' to leave. > ").lower()
+            if key == 'exit':
+                leave = True
+            elif key != 'exit':
+                if key in shop_list:
+                    print("Removing", key)
+                    del shop_list[key]
+                else:
+                    print("This item was already not on your list.")
+                
