@@ -20,25 +20,36 @@ def add_item():
             value = input("What is the price? > ")
             print("Adding", key, "at the price of", value, "dollars.")
             shop_list[key] = value
+def remove_item():
+    leave = False
+    while leave == False:
+        key = input("What would you like to remove? Type 'exit' to leave. > ").lower()
+        if key == 'exit':
+            leave = True
+        elif key != 'exit':
+            if key in shop_list:
+                print("Removing", key)
+                del shop_list[key]
+            else:
+                print("This item is not on your list.")
 
 #----Main Code----#
 again = 'y'
 while again == 'y':
     print("Welcome to your shopping list!")
-    print("Would you like to add, remove, browse, or quit?")
+    print("Would you like to add, remove, browse, or exit?")
     edit = input("> ").lower()
     if edit == 'add':
         add_item()
     elif edit == 'remove':
-        leave = False
-        while leave == False:
-            key = input("What would you like to remove? Type 'exit' to leave. > ").lower()
-            if key == 'exit':
-                leave = True
-            elif key != 'exit':
-                if key in shop_list:
-                    print("Removing", key)
-                    del shop_list[key]
-                else:
-                    print("This item was already not on your list.")
+        remove_item()
+    elif edit == 'browse':
+        for (key,value) in shop_list.items():
+            print("You have", key, "for", value, "dollars.")
+    elif edit == 'exit':
+        print("Good-bye!")
+        again = 'n'
+    else:
+        print("I'm sorry, I didn't quite catch that.")
+        
                 
